@@ -1,0 +1,9 @@
+cdk init
+- create virtual environment for new python projects
+- add specific version or constrain updates to versions construct library modules to requirements.txt
+  # accept only bug-fix updates 
+  - aws-cdk.core~=1.0
+  - aws-cdk.aws-s3~=1.0
+- use pip to install and update modules
+  - pip list --local --outdates
+  - pipe install --upgrade -r requirements.txt
