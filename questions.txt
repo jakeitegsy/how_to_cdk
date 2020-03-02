@@ -1,0 +1,24 @@
+how can I create AWS infrastructure deployments with cloud formation?
+how can I provision AWS infrastructure deployments with cloud formation?
+how can I build highly reliable applications in the cloudformation?
+how can I build highly scalable applications in the cloudformation?
+how can I build cost-effective applications in the cloud with cloudformation?
+how can I create and delete a collection of resources together as a single unit with cloud formation?
+how can I compose constructs into stacks?
+how can I compose constructs into apps?
+how can I use logic when defining infrastructure?
+how can I use if statements when defining infrastructure?
+how can I use for-loops when defining infrastructure?
+how can I use object-oriented techniques to create a model of a system?
+how can I define high level abstractions of our infrastructure?
+how can I share high level abstractions of our infrastructure?
+how can I publish high level abstractions of our infrastructure?
+how can I organize a project into logical modules?
+how can I share and reuse infrastructure as a library?
+how can I test infrastructure code uusing industry-standard protocols?
+how can I use my existing code review workflow?
+how can I synthesize CloudFormation templates?
+how can I deploy stacks to development AWS accounts?
+how can I diff against a deployed stack to understand the impact of a code change?
+how can I contribute to the AWS CDK?
+how can I troubleshoot AWS CDK?
