@@ -1,0 +1,2 @@
+cdk bootstrap
+cdk bootstrap aws://$ACCOUNT_NUMBER/$REGION

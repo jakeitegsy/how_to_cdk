@@ -1,0 +1,11 @@
+// recount.js - count the resources defined in a stack
+// invoke with: nod rescount.js $PATH_TO_STACK.json
+// e.g. node rescount.js cdk.out/MyStack.template.json
+
+const fs = require('fs');
+const path = process.argv[2];
+
+if (path) fs.readFile(path, 'utf8', function(err, contents) {
+	console.log(err ? `${err}`: 
+	`${Object.keys(JSON.parse(contents).Resources).length} resources defined in ${path}`);
+}); else console.log("Please specify the path to the stack's output .json file");
