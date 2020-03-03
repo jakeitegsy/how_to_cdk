@@ -1,0 +1,4 @@
+Initialization
+- scope - self
+- id - unique_id - unique_namespace - resource_names/cloudformation_logical_id
+- props(**kwargs) - properties
