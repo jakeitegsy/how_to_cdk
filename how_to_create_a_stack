@@ -1,12 +1,22 @@
 from aws_cdk.core import App, Stack
+
 from aws_cdk import aws_$SERVICE as $SERVICE
+from aws_cdk import aws_s3 as s3
 
 class $STACK_NAME(core.Stack):
 
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        $SERVICE.$RESOURCE(self, "$PARAMETER", $KEYWORD=$VALUE)
+        $CONSTRUCT(scope, id, **kwargs)
+        $SERVICE.$RESOURCE(self, "$UNIQUE_ID", $KEYWORD=$VALUE)
+        s3.Bucket(self, "MyFirstBucket", versioned=True)
+        s3.Bucket(
+            self, 
+            "MyEncryptedBucket", 
+            encryption=s3.BucketEncryption.KMS, 
+            website_index_document="index.html"
+        )
  
  app = core.App()
  HelloCdkStack(app, "$STACK_NAME")
