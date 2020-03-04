@@ -1,0 +1,12 @@
+from aws_cdk.core import App, Stack
+from aws_cdk import aws_$SERVICE as $SERVICE
+
+class $STACK_NAME(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        $SERVICE.$RESOURCE(self, "$PARAMETER", $KEYWORD=$VALUE)
+ 
+ app = core.App()
+ HelloCdkStack(app, "$STACK_NAME")
