@@ -1,0 +1,5 @@
+CDK steps
+0 requirements
+1 import core
+2 define stack
+3 populate with resource
