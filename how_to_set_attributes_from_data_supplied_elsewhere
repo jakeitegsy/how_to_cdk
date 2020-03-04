@@ -1,0 +1,15 @@
+$CONSTRUCT_REFERENCE = $CONSTRUCT(scope, '$UNIQUE_NAME')
+jobs_queue = sqs.Queue(self, "jobs")
+
+$CONSTRUCT_REFERENCE = $CONSTRUCT(scope, '$UNIQUE_NAME', **kwargs)
+create_job_lambda = lambda_.Function(
+    self, 
+    "create-job",
+    runtime=lambda_.Runtime.NODEJS_10_X,
+    handler="index.handler",
+    code=lambda_.Code.from_asset("./create-job-lambda-code"),
+    environment=dict(
+        QUEUE_URL=jobs_queue.queue_url
+    )
+)
+
