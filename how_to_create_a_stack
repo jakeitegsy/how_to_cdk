@@ -9,7 +9,7 @@ class $STACK_NAME(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         $CONSTRUCT(scope, id, **kwargs)
-        $SERVICE.$RESOURCE(self, "$UNIQUE_ID", $KEYWORD=$VALUE)
+        $SERVICE.$RESOURCE(self, "$UNIQUE_NAME", $KEYWORD=$VALUE)
         s3.Bucket(self, "MyFirstBucket", versioned=True)
         s3.Bucket(
             self, 
