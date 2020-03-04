@@ -1,0 +1,9 @@
+$CONSTRUCT_REFERENCE = $CONSTRUCT(scope, '$UNIQUE_NAME')
+$IAM_ENTITY_REFERENCE = iam.$ENTITY(scope, '$UNIQUE_NAME')
+$CONSTRUCT_REFERENCE.grant_$PERMISSION($CONSTRUCT_REFERENCE)
+
+raw_data = s3.Bucket(self, 'raw-data')
+data_science = iam.Group(self, 'data-science')
+raw_data.grant_read(data_science)
+
+
