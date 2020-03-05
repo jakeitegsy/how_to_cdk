@@ -1,6 +1,8 @@
 from aws_cdk import aws_$SERVICE as $SERVICE
-from aws_cdk import aws_s3 as s3
 
 $CONSTRUCT = $SERVICE.$RESOURCE
-$CONSTRUCT(scope, "$UNIQUE_NAMESPACE", **kwargs)
+$CONSTRUCT(self, "$UNIQUE_NAMESPACE", **kwargs)
+$CONSTRUCT(self, "$UNIQUE_NAMESPACE", $NAME_1=$VALUE_1, $NAME_2=$VALUE_2, $NAME_3=$VALUE_3, $NAME_N=$VALUE_N)
+
+from aws_cdk import aws_s3 as s3
 s3.Bucket(self, "BucketNamespace" versioned=True)
