@@ -1,0 +1,29 @@
+class $CONSTRUCT_NAME(core.Construct):
+
+    def __init__(self, scope: core.Construct, id: str, *args, **kwargs):
+        super().__init__(scope, id)
+        
+        $CONSTRUCT_NAME_1 = $SERVICE.$RESOURCE(self, "$CONSTRUCT_NAME_1")
+        $CONSTRUCT_NAME_2 = $SERVICE.$RESOURCE(self, "$CONSTRUCT_NAME_2")
+        $CONSTRUCT_NAME_3 = $SERVICE.$RESOURCE(self, "$CONSTRUCT_NAME_3")
+        $CONSTRUCT_NAME_N = $SERVICE.$RESOURCE(self, "$CONSTRUCT_NAME_N")
+        
+        
+
+class NotifyingS3Bucket(core.Construct):
+
+    def __init__(self, scope: core.Construct, id: str, *, prefix=None, **kwargs):
+        super().__init__(scope, id, **kwargs)
+        bucket_name = s3.Bucket(self, "bucket_name")
+        self.topic_name = sns.Topic(self, "topic_name")
+        bucket_name.add_object_created_notification(
+            s3notify.SnsDestinaion(topic),
+            s3.NotificationKeyFilter(prefix=prefix)
+        )
+
+NotifyingBucket_1(self, "NotifyingBucket_1")
+NotifyingBucket_2(self, "NotifyingBucket_2", prefix="images/")
+
+Queue_1 = sqs.Queue(self, "Queue_1")
+NotifyingBucket_3(self, "NotifyingBucket_3", prefix="images/")
+NotifyingBucket_3(sns_sub.SqsSubscription(queue))
