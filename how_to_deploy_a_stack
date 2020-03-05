@@ -1,0 +1,8 @@
+app = App()
+$CONSTRUCT(scope, id, **kwargs)
+$STACK_NAME(app, "$STACK_NAME")
+app.synth()
+
+app = App()
+S3BucketStack(app, "S3BucketApp")
+app.synth()
