@@ -1,0 +1,21 @@
+$CONSTRUCT = $SERVICE.$RESOURCE
+$CONSTRUCT_NAME = $CONSTRUCT(self, '$CONSTRUCT_NAME', <**kwargs>)
+$CONSTRUCT_NAME.$METHOD(*args, **kwargs)
+$CONSTRUCT_NAME.$PROPERTIES
+$CONSTRUCT_NAME.grant_$PERMISSION($CONSTRUCT_NAME)
+
+
+data_science = iam.Group(self, 'data-science')
+raw_data = s3.Bucket(self, 'raw-data')
+raw_data.grant_read(data_science)
+
+jobs_queue = sqs.Queue(self, "jobs")
+create_job_lambda = lambda_.Function(
+    self, "create-job",
+    runtime=lambda_.Runtime.NODEJS_10_X,
+    handler="index.handler",
+    code=lambda_.Code.from_asset("./create-job-lambda-code"),
+    environment=dict(
+        QUEUE_URL=jobs_queue.queue_url
+    ),
+)
