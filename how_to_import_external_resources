@@ -1,0 +1,6 @@
+$SERVICE.$RESOURCE.$METHOD(self, "$IDENTIFIER", "$EXISTING_PARAMETER")
+
+s3.Bucket.from__bucket_name(self, "Bucket_A", "$EXISTING_BUCKET_NAME")
+s3.Bucket.from_arn(self, "Bucket_A", "arn:aws:s3:::$EXISTING_BUCKET_NAME")
+
+ec2.Vpc.from_vpc_attributes(self, "VPC_A, vpc_id="vpc-1234567890abcdef")
