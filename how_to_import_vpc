@@ -1,0 +1,6 @@
+ec2.Vpc.from_lookup(
+    self,
+    "$IDENTIFIER",
+    is_default=TRUE|FALSE,
+    tags={"aws-cdk:subnet-type": "Public|Private"}
+)
