@@ -1,0 +1,23 @@
+import aws_cdk.aws_cloudwatch as cloudwatch
+
+$METRIC_IDENTIFIER = $CONSTRUCT.$METRIC(**kwargs)
+$METRIC_IDENTIFIER.create_alarm(self, "$METRIC_IDENTIFIER", **kwargs)
+
+
+import aws_cdk.aws_cloudwatch as cloudwatch
+import aws_cdk.aws_sqs as sqs
+from aws_cdk.core import Duration
+
+queue = sqs.Queue(self, "Queue_A")
+
+metric = queue.metric_approximate_number_of_messages_not_visible(
+    label="Message Visible (Approx.)",
+    period=Duration.minutes(5),
+)
+
+metric.create_alarm(
+    self,
+    "AlarmTooManyMessages",
+    comparison_operator=cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+    threshold=100,
+)
