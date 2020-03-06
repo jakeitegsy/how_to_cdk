@@ -1,0 +1,13 @@
+import aws_cdk.aws_autoscaling as auto_scaling_group
+import aws_cdk.aws_ec2 as ec2
+
+$FLEET_A = auto_scaling_group.AutoScalingGroup(self, "$FLEET_A", **kwargs)
+
+$FLEET_A.connections.allow_to(
+    ec2.Peer.any_ipv4(),
+    ec2.Port(PortProps(from_port=443, to_port=443))    
+)
+
+$FLEET_B = auto_scaling_group.AutoScalingGroup(self, "$FLEET_B", **kwargs)
+
+$FLEET_B.connections.allow_from(FLEET_A, ec2.Port.all_traffic)
