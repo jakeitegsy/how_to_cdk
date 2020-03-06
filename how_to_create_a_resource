@@ -1,7 +1,7 @@
 import aws_cdk.aws_$SERVICE as $SERVICE
 
-$SERVICE_INSTANCE = $SERVICE(self, "$SERVICE_INSTANCE_IDENTIFIER", **kwargs)
+$SERVICE(self, "$SERVICE_INSTANCE_IDENTIFIER", **kwargs)
 
 import aws_cdk.aws_sqs as sqs
 
-queue_A = sqs_Queue(self, "Queue_A", encryption=sqs.QueueEncryption.KMS_MANAGED)
+sqs_Queue(self, "Queue_A", encryption=sqs.QueueEncryption.KMS_MANAGED)
