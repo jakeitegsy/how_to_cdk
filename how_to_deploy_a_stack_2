@@ -1,0 +1,30 @@
+class $STACK_NAME(Stack):
+
+    def __init__(self, scope: Construct, id: str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+        
+        $CONSTRUCT(self, "$CONSTRUCT_NAME")
+
+
+class $APP_NAME(App):
+
+    def __init__(self, scope: Construct, id: str, **kwargs):
+        $STACK_NAME(self, "$STACK_NAME")
+
+$APP_NAME().synth()
+
+
+class Stack_A(Stack):
+
+    def __init__(self, scope: Construct, id: str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+        
+        s3.Bucket(self, "MyFirstBucket")
+
+
+class App_A(App):
+
+    def __init__(self):
+        Stack_A(self, "Hello-CDK")
+
+App_A().synth()
