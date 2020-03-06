@@ -1,0 +1,1 @@
+$STACK_NAME(self, "$STACK_NAMESPACE", stack_name="$STACK_NAME")
