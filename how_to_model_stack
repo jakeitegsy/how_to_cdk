@@ -1,0 +1,41 @@
+class Stack(scope, id: str, **kwargs):
+
+    stack_name = $STACK_NAME
+    region = $AWS_REGION
+    account = $AWS_ACCOUNT
+    
+    def of(construct):
+        return Stack in which construct is defined
+
+    def add_dendency(self, stack):
+        - what is the dependency order between self and stack
+    
+    def tags(self)
+        return tag_manager
+    
+    def partition:
+        return token for { "Ref": "AWS::Partition" }
+    
+    def url_suffix:
+        return token for { "Ref": "AWS::UrlSuffix" }
+        
+    def notification_arn:
+        return token for { "Ref": "AWS::NotificationArn" }
+    
+    def stack_id:
+        return token for { "Ref": "AWS::StackID" }
+        
+    def availability_zones:
+        return {$AZ_A, ..., $AZ_N}
+    
+    def parse_arn(ARN):
+        return parsed ARN
+    
+    def format_arn(ARN):
+        return formatted ARN
+    
+    def to_json_string:
+        return object as JSON string
+    
+    def template_options(options=[Transform, Description, Metadata]):
+        return options
