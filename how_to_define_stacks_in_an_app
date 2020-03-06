@@ -1,0 +1,45 @@
+app = App()
+
+Stack_1(app, 'Stack_1')
+Stack_2(app, 'Stack_2')
+Stack_3(app, 'Stack_3')
+Stack_N(app, 'Stack_N')
+
+app.synth()
+
+from aws_cdk.core import App, Construct, Stack
+
+class ControlPlane(Stack):
+
+  def __init__(self, scope: Construct, id: str, **kwargs):
+    super().__init__(scope, id, **kwargs)
+    pass
+
+
+class DataPlane(Stack):
+
+  def __init__(self, scope: Construct, id: str, **kwargs):
+    super().__init__(scope, id, **kwargs)
+    pass
+    
+
+class Monitor(Stack):
+
+  def __init__(self, scope: Construct, id: str, **kwargs):
+    super().__init__(scope, id, **kwargs)
+    pass
+    
+
+class Service_A(Construct):
+
+  def __init__(self, scope: Construc, id: sr, *, prod=False):
+    super().__init__(scope, id)
+    
+    ControlPlane(self, "Control_Plane")
+    DataPlane(self, "Data_Plane")
+    Monitor(selef, "Monitor")
+    
+app = App();
+Service_A(app, "Beta")
+Service_B(app, "Prod", prod=True)
+app.synth()
