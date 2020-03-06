@@ -1,0 +1,9 @@
+$CONSTRUCT.$NOTIFICATION_METHOD($NOTIFIER($HANDLER))
+
+import aws_cdk.aws_s3 as s3
+import aws_cdk.aws_s3_notifications as s3_notify
+import aws_cdk.aws_lambda as lambda_
+
+handler = lambda_.Function(self, "Handler", **kwargs)
+bucket = s3.Bucket(self, "Bucket")
+bucket.add_object_created_notification(s3_notify.LambdaDestination(lambda))
