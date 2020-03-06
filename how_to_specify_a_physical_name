@@ -1,0 +1,3 @@
+$CONSTRUCT_NAME = $SERVICE.$RESOURCE(
+  self, "$UNIQUE_IDENTIFIER", physical_name=core.PhysicalName.GENERATE_IF_NEEDED
+)
