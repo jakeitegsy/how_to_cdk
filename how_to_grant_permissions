@@ -1,0 +1,4 @@
+if bucket.grant_read_write($FUNCTION).success:
+    $STATEMENT
+    
+table.grant($FUNCTION, "dynamodb:CreateBackup")
