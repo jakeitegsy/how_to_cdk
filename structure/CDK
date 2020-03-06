@@ -1,5 +1,4 @@
 CDK
 - App
   - Stack
-    - Construct
-	  - Resource | Construct
+    - Construct = Resource | Construct
