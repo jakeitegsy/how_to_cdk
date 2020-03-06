@@ -1,0 +1,6 @@
+$ENVIRONMENT_NAME = core.Environment(account="$ACCOUNT_NUMBER', region="$AWS_REGION")
+
+US = core.Environment(account="1234567890", region="us-west-2")
+EU = core.Environment(account="2345678901", region="eu-east-1")
+Stack_A(app, "Stack_A_US", env=US, **kwargs)
+Stack_A(app, "Stack_A_EU", env=EU, **kwargs)
