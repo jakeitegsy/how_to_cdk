@@ -1,0 +1,20 @@
+def cdk_deploy
+  
+  def initialization(constructs):
+    - instantiate all defined constructs
+    - chain constructs together
+
+  def preparation(constructs):
+    - automatically setup constructs
+
+  def validation(constructs):
+    - are the constructs in a state that will correctly deploy?
+    - what should I do if a construct is not in a state that will correctly deploy?
+
+  def synthesis(constructs):
+    - invoke synthesize on all constructs
+    return cloud assembly
+    exit cdk_app
+
+  def deployment(cloud_assembly):
+    - deploy cloud_assembly.deployment_artifacts
