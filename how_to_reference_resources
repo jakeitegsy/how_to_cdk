@@ -1,0 +1,5 @@
+$RESOURCE_A = $SERVICE.$RESOURCE(self, "$RESOURCE_A")
+$RESOURCE_B = $SERVICE.$RESOURCE(self, "$RESOURCE_B", $KEY=$RESOURCE_A)
+
+cluster = ecs.Cluster(self, "Cluster")
+service = ecs.Ec2Service(self, "Service", cluster=cluster)
