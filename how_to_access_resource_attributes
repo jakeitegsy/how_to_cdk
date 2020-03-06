@@ -1,0 +1,12 @@
+import aws_cdk.aws_$SERVICE as $SERVICE
+
+$SERVICE_INSTANCE = $SERVICE(self, "$SERVICE_INSTANCE_IDENTIFIER", **kwargs)
+$SERVICE_INSTANCE.attribute_0
+$SERVICE_INSTANCE.attribute_1
+$SERVICE_INSTANCE.attribute_2
+$SERVICE_INSTANCE.attribute_N
+
+import aws_cdk.aws_sqs as sqs
+
+queue_A = sqs_Queue(self, "Queue_A", encryption=sqs.QueueEncryption.KMS_MANAGED)
+queue_A_url = queue_A.queue_url
