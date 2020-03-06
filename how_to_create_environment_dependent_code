@@ -1,0 +1,6 @@
+import os
+
+Stack_A(app, "dev", env=core.Environment(
+    account=os.environ["CDK_DEFAULT_ACCOUNT"],
+    region=os.environ["CDK_DEFAULT_REGION"]
+))
