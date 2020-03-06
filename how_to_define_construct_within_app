@@ -1,0 +1,13 @@
+class StackA(Stack)
+
+    def __init__(self, scope: Construct, id: str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+        
+        s3.Bucket(self, "BucketA")
+
+class AppA(App):
+
+    def __init__(self):
+        MyFirstStack(self, "hello-cdk")
+
+MyApp().synth()
