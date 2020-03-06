@@ -1,0 +1,7 @@
+# cdk.json
+{
+    "app": "python $APPNAME.py"
+}
+
+# cli
+cdk --app $CDK_COMMAND
