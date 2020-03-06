@@ -1,0 +1,2 @@
+listener.connections.allow_default_port_from_any_ipv4("Public access allowed to listener")
+fleet.connects.allow_to_default_port(rds_database, "Database Access for fleet")
