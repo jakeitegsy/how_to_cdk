@@ -1,0 +1,16 @@
+
+actual_value = None
+
+
+class Producer:
+    
+    def __init__(self, function):
+        self.produce = function
+
+AutoScalingGroup(
+    self, "Group", 
+    desired_capacity=Lazy.number_Value(Producer(lambda context: actual_value))
+)
+
+# At some later point
+actual_value = 10
