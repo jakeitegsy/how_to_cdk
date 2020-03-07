@@ -1,0 +1,9 @@
+Tag.add($CONSTRUCT, "$KEY", "$VALUE")
+Tag.add($CONSTRUCT, "$KEY", "$VALUE", priority=$NUMBER|None)
+
+Tag.add($CONSTRUCT, "$KEY", "VALUE",
+    apply_to_launched_instances=False,
+    include_resource_types=["AWS::$XXX::$YYY"],
+    exclude_resource_types={"AWS::$XXX::$ZZZ"],
+    priority=$NUMBER,
+)
