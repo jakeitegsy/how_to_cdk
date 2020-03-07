@@ -1,0 +1,17 @@
+from aws_cdk.core import App, Construct, Stack, StackProps
+from aws_cdk import aws_s3 as s3
+
+
+class StackObject(Stack):
+
+    def __init__(self, scope: Construct, id: str, **kwargs)
+        super().__init__(scope, id, **kwargs)
+        s3.Bucket(self, "Bucket")
+
+app = App()
+StackObject(app, '$IDENTIFIER_1')
+StackObject(app, '$IDENTIFIER_2')
+
+
+path = $CONSTRUCT.node.path
+unique_id = $CONSTRUCT.node.unique_id
