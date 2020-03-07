@@ -1,0 +1,13 @@
+import os.path
+
+from aws_cdk.aws_s3_assets import Asset
+
+$DIRECTORY_NAME = os.path.dirname(__file__)
+
+$DIRECTORY_ASSET = Asset(
+    self, "$ZIPPED_DIRECTORY", path=os.path.join($DIRECTORY_NAME, $ZIPPED_DIRECTORY)
+)
+
+$FILE_ASSET = Asset(
+    self, '$FILE_ASSET', path=os.path.join($DIRECTORY_NAME, "$FILE_ASSET.EXT") 
+)
