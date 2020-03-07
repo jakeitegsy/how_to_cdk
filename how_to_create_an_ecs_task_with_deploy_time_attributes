@@ -1,0 +1,23 @@
+import os.path
+import aws_cdk.aws_ecs as ecs
+
+from aws_cdk.aws_ecr_assets import DockerImageAsset
+
+$DIRECTORY = os.path.dirname(__file__)
+
+$DOCKER_ASSET = DockerImageAsset(
+    self, "$DOCKER_IMAGE", 
+    directory=os.path.join($DIRECTORY, "..", "$DOCKER_IMAGE")
+)
+
+$TASK_DEFINITION = ecs.FargateTaskDefinition(
+    self, "$TASK_DEFINITION",
+    memory_limit_mib=1024, cpu=512
+)
+
+$TASK_DEFINITION.add_container(
+    "$DOCKER_CONTAINER",
+    image=ecs.ContainerImage.fromEcrRepository(
+        asset.repository, asset.image_uri
+    )
+)
