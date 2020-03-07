@@ -1,0 +1,12 @@
+from aws_cdk.aws_s3_assets import Asset
+from aws_cdk import aws_iam as iam
+
+import os.path
+$DIRECTORY = os.path.dirname(__file__)
+
+$ASSET = Asset(
+    self, "$FILENAME", path=os.path.join($DIRECTORY, "$FILENAME.ext")
+)
+
+$IAM_ENTITY = iam.$ENTITY(self, "$ENTITY_IDENTIFIER")
+$ASSET.grantRead($IAM_ENTITY)
