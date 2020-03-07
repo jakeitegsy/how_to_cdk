@@ -1,0 +1,27 @@
+# in $LAMBDA_HANDLER.py in $HANDLER_DIRECTORY
+def lambda_handler(event, context):
+    message = "$MESSAGE"
+    return { 'message': $MESSAGE }
+
+# in main CDK app
+from aws_cdk.core import Stack, Construct
+from aws_cdk import aws_lambda as lambda_
+
+import os.path
+$DIRECTORY_NAME = os.path.dirname(__file__)
+
+
+class $STACK_NAME(Stack):
+
+    def __init__(self, scope: Construct, id: str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+        
+        lambda_.Function(
+            self,
+            '$LAMBDA_FUNCTION_IDENTIFIER',
+            code=lambda_.Code.from_asset(
+                os.path.join($DIRECTORY_NAME, $HANDLER_DIRECTORY)
+            ),
+            runtime=lambda_.Runtune.PYTHON_3_8,
+            handler="index.lambda_handler"
+        )
