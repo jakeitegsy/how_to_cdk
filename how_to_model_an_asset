@@ -1,0 +1,10 @@
+class Asset:
+
+    def bundle(asset):
+      if type(asset) == docker.image:
+          upload_to_ecr(asset)
+      else:
+        if type(asset) == directory:
+          asset = zip(asset)
+        upload_to_s3(asset)
+          
