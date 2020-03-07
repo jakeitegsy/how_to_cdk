@@ -1,0 +1,5 @@
+bucket = s3.Bucket(self, "Bucket_N")
+
+function = lambda_.Function(
+    stack, "Lambda_N", environment=dict(BUCKET_NAME=bucket.bucket_name)
+)
