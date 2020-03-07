@@ -1,0 +1,2 @@
+$STACK = Stack.of(self)
+$STRING= stack.to_json_string(dict(value=bucket.bucket_name))
