@@ -1,0 +1,23 @@
+import os.path
+
+from aws_cdk import aws_lambda as lambda_
+from aws_cdk.aws_s3_assets import Asset
+
+$DIRECTORY_NAME = os.path.dirname(__file__)
+
+$FILE_ASSET = Asset(
+    self, "$IMAGE_ASSET", os.path.join($DIRECTORY_NAME, "$PATH_TO_FILE")
+)
+
+lambda_.Function(
+    self,
+    "$LAMBDA_FUNCTION",
+    code=lambda_.Code.asset(os.path.join($DIRECTORY_NAME, "$LAMBDA_DIRECTORY")),
+    runtime=lambda_.Runtime.PYTHON_3_8,
+    handler="index.lambda_handler",
+    environment=dict(
+        S3_BUCKET_NAME=$FILE_ASSET.s3_bucket_name,
+        S3_OBJECT_KEY=$FILE_ASSET.s3_object_key,
+        S3_URL=$FILE_ASSET.s3_url
+    ),
+)
