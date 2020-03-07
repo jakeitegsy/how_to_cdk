@@ -1,0 +1,6 @@
+asset = DockerImageAsset(
+    self, 
+    "$DOCKER_IMAGE", 
+    directory="$PATH_TO_DIRECTORY_WITH_DOCKERFILE",
+    build_args=dict($KEY="$VALUE")
+)
