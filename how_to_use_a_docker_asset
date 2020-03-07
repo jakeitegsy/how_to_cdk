@@ -1,0 +1,9 @@
+from aws_cdk.aws_ecr_assets import DockerImageAsset
+
+import os.path
+$DIRECTORY_NAME = os.path.dirname(__file__)
+
+asset = DockerImageAsset(
+    self, '$DOCKER_IMAGE', 
+    directory=os.path.join(dirname, '$DIRECTORY_W_DOCKERFILE')
+)
