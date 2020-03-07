@@ -1,0 +1,2 @@
+$DOCKER_ASSET.repository.grant_pull()
+$DOCKER_ASSET.repository.add_to_resource_policy()
