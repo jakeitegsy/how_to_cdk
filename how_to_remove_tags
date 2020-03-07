@@ -1,0 +1,6 @@
+Tag.remove($CONSTRUCT, "$KEY")
+Tag.remove($CONSTRUCT, "KEY",
+    include_resource_types=["AWS::$XXX::$YYY"],
+    exclude_resource_Types=["AWS::$XXX::$YYY"],
+    priority=200,
+)
