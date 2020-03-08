@@ -1,2 +1,11 @@
 add_to_role_policy
 add_to_resource_policy
+
+$BUCKET.add_to_resource_policy(
+    iam.PolicyStatement(
+        effect=iam.Effect.ALLOW,
+        actions=["s3:$ACTION"],
+        resources=[$BUCKET.bucket_arn],
+        principals=role
+    ),
+)
