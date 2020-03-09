@@ -1,0 +1,14 @@
+@jsii.implemens(core.IAspect)
+class BucketVersioningChecker:
+
+    def visit(self, node):
+        if isinstance(node, s3.CfnBucket):
+        
+            if (
+                !node.versioning_configuration \
+             or !Tokenization.is_resolvable(node.versioning_configuration) \
+            and node.versioning_configuration.status != "Enabled"
+            ):
+                node.node.arr_error("Bucket versioning is not enabled")
+
+stack.node.apply_aspect(BucketVersioningChecker())
