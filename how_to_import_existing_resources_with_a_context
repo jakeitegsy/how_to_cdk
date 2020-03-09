@@ -1,0 +1,19 @@
+from aws_cdk import core, Stack, Construct
+import aws_cdk.aws_ec2 as ec2
+
+
+class ExistsVpcStack(Stack):
+
+    def __init__(scope: Construct, id: str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+        
+        $VPC_ID = self.node.try_get_context("$VPC_ID")
+        $VPC = ec2.Vpc.from_lookup(self, "$VPC", vpc_id=$VPC_ID)
+        
+        $PUBLIC_SUBNETS = vpc.select_subnets(subnetType=ec2.SubnetType.PUBLIC)
+        
+        cdk.CfnOputput(
+            self, "$PUBLIC_SUBNETS", value=$PUBLIC_SUBNETS.SUBNET_IDS.to_string()
+        )
+        
+        
