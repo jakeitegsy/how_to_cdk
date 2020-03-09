@@ -1,0 +1,3 @@
+cdk context
+cdk context --reset $NUMBER
+cdk context --clear
