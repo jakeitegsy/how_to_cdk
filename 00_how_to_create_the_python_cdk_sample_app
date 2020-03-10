@@ -1,0 +1,20 @@
+ls
+mkdir cdk_workshop
+ls
+cdk_workshop
+ls
+cdk init sample-app --language python
+ls
+cat app.py
+cat cdk_workshop\cdk_workshop_stack.py
+
+.env\Scripts\activate.bat # Windows
+source .env/bin/activate  # Linux/MacOS
+
+pip3 install -r requirements.txt
+cdk synth
+cdk bootstrap
+
+cdk list
+cdk deploy cdk-workshop
+y
