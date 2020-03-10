@@ -1,0 +1,7 @@
+Statement:
+- Action: $SERVICE:$ACTION
+  Condition:
+    $STATEMENT
+  Effect: Allow | Deny
+  Principal: $PRINCIPAL
+  Resource: $RESOURCE
