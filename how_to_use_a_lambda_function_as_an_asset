@@ -1,4 +1,4 @@
-# in $LAMBDA_HANDLER.py in $HANDLER_DIRECTORY
+# in $LAMBDA_FILE.py in $LAMBDA_DIRECTORY
 def lambda_handler(event, context):
     message = "$MESSAGE"
     return { 'message': $MESSAGE }
@@ -6,9 +6,6 @@ def lambda_handler(event, context):
 # in main CDK app
 from aws_cdk.core import Stack, Construct
 from aws_cdk import aws_lambda as lambda_
-
-import os.path
-$DIRECTORY_NAME = os.path.dirname(__file__)
 
 
 class $STACK_NAME(Stack):
@@ -19,9 +16,7 @@ class $STACK_NAME(Stack):
         lambda_.Function(
             self,
             '$LAMBDA_FUNCTION_IDENTIFIER',
-            code=lambda_.Code.from_asset(
-                os.path.join($DIRECTORY_NAME, $HANDLER_DIRECTORY)
-            ),
-            runtime=lambda_.Runtune.PYTHON_3_8,
-            handler="index.lambda_handler"
+            runtime=lambda_.Runtune.PYTHON_X_X,
+            code=lambda_.Code.asset('$LAMBDA_DIRECTORY'),
+            handler="$LAMBDA_FILE.lambda_handler"
         )
