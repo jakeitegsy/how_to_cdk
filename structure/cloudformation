@@ -1,0 +1,6 @@
+Resources:
+  $RESOURCE_NAME:
+    Type: AWS::$SERVICE::$RESOURCE
+    Properties:
+    Metadata:
+      aws:cdk:path: $FILENAME/$STACK_IDENTIFIER/$NAME
