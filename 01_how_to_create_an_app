@@ -1,0 +1,13 @@
+pip3 install aws-cdk.core
+
+mkdir $APP_NAME
+cd $APP_NAME
+
+cdk init --language python
+
+.\env\Scripts\activate.bat # windows
+source .env/bin/activate   # linux/macOS
+
+pip3 install -r requirements.txt
+
+$EDITOR app.py
